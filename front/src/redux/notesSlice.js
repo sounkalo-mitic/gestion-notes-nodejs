@@ -61,6 +61,4 @@ export const removeNote = (id) => async dispatch => {
     }
 };
 
-
-
 export default notesSlice.reducer;

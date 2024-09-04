@@ -1,5 +1,3 @@
-// src/components/BasicTable.js
-
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Table from '@mui/material/Table';
@@ -10,9 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import MuiButton from './Button';
-import { fetchNotes, updateNote, deleteNote, addNote } from '../redux/notesSlice';
-import MyComponent from './MyComponent';
-import NoteDialog from './NoteDialog'; // Importation du nouveau composant
+import { fetchNotes, updateNote, deleteNote, createNote } from '../redux/notesSlice';
+import NoteDialog from './NoteDialog';
 
 const styles = {
   cellButtonContainer: {
@@ -55,14 +52,14 @@ export default function BasicTable() {
     if (editItem.id) {
       dispatch(updateNote(editItem));
     } else {
-      dispatch(addNote(editItem));
+      dispatch(createNote(editItem));
     }
     handleClose();
   };
 
   return (
     <>
-      <MyComponent onClick={handleAddClick} />
+      <MuiButton color={'primary'} text={'Ajouter Note'} onClick={handleAddClick} />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650, marginTop: 10 }} aria-label="simple table">
           <TableHead>
@@ -73,8 +70,8 @@ export default function BasicTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {notes.map((row, index) => (
-              <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+            {notes.map((row) => (
+              <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                 <TableCell align="right">{row.title}</TableCell>
                 <TableCell align="right">{row.content}</TableCell>
                 <TableCell style={styles.cellButtonContainer}>
