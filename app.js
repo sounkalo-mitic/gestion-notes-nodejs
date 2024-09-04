@@ -1,10 +1,13 @@
-// app.js
+// Charger les modules nécessaires
 const express = require('express');
 const app = express();
 const noteRoutes = require('./routes/noteRoutes');
-require('dotenv').config(); // Charger les variables d'environnement du fichier .env
+require('dotenv').config();
+const cors = require('cors');
 
-// Utiliser le middleware pour parser le JSON
+app.use(cors());
+
+// Middleware pour parser le JSON
 app.use(express.json());
 
 // Utiliser les routes
