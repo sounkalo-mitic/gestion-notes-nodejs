@@ -1,4 +1,3 @@
-// Charger les modules nécessaires
 const express = require('express');
 const app = express();
 const noteRoutes = require('./routes/noteRoutes');

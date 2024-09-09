@@ -1,13 +1,12 @@
-// models/db.js
 const mysql = require('mysql2');
-require('dotenv').config(); // Charge les variables d'environnement du fichier .env
+require('dotenv').config(); 
 
 // Crée une connexion à la base de données MySQL
 const db = mysql.createConnection({
-    host: process.env.DB_HOST,      // Hôte de la base de données (ex: localhost)
-    user: process.env.DB_USER,      // Utilisateur de la base de données
-    password: process.env.DB_PASSWORD,  // Mot de passe de la base de données
-    database: process.env.DB_NAME   // Nom de la base de données
+    host: process.env.DB_HOST,      
+    user: process.env.DB_USER,      
+    password: process.env.DB_PASSWORD,  
+    database: process.env.DB_NAME   
 });
 
 // Connecte à la base de données

@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { Container } from '@mui/material';
 import TaskList from './components/TaskList';

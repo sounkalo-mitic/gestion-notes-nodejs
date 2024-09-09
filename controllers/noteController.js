@@ -1,4 +1,3 @@
-// controllers/noteController.js
 const db = require('../models/db');
 
 // Obtenir toutes les notes

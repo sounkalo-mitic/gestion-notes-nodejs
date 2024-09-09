@@ -1,5 +1,4 @@
-// src/features/todo/todoSlice.js
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { fetchTasks, createTask, updateTask, deleteTask } from './todoAPI';
 
 const todoSlice = createSlice({

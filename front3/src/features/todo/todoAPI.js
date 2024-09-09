@@ -1,6 +1,6 @@
-// src/features/todo/todoAPI.js
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+
 
 const API_URL = 'http://localhost:3000/api/notes';
 
@@ -21,5 +21,5 @@ export const updateTask = createAsyncThunk('todo/updateTask', async (task) => {
 
 export const deleteTask = createAsyncThunk('todo/deleteTask', async (id) => {
   await axios.delete(`${API_URL}/${id}`);
-  return id; // Retourne l'ID supprimé
+  return id;
 });
